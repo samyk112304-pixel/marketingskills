@@ -107,6 +107,22 @@ Quick reference for AI agents to discover tool capabilities and integration meth
 | strapi | Headless CMS | ✓ | - | ✓ | ✓ | [strapi.md](integrations/strapi.md) |
 | composio | Integration Layer | ✓ | ✓ | ✓ | ✓ | [composio.md](integrations/composio.md) |
 | cogny | Integration Layer | - | ✓ | - | - | [cogny.md](integrations/cogny.md) |
+| n8n | Automation | ✓ | - | [✓](clis/n8n.js) | - | [n8n.md](integrations/n8n.md) |
+| make | Automation | ✓ | - | [✓](clis/make.js) | - | [make.md](integrations/make.md) |
+| smartlead | Email Outreach | ✓ | - | [✓](clis/smartlead.js) | - | [smartlead.md](integrations/smartlead.md) |
+| reply | Sales Engagement | ✓ | - | [✓](clis/reply.js) | - | [reply.md](integrations/reply.md) |
+| triple-whale | DTC Analytics | ✓ | - | [✓](clis/triple-whale.js) | - | [triple-whale.md](integrations/triple-whale.md) |
+| fullstory | Session Replay | ✓ | - | [✓](clis/fullstory.js) | ✓ | [fullstory.md](integrations/fullstory.md) |
+| vwo | A/B Testing | ✓ | - | [✓](clis/vwo.js) | ✓ | [vwo.md](integrations/vwo.md) |
+| omnisend | Email/SMS | ✓ | - | [✓](clis/omnisend.js) | - | [omnisend.md](integrations/omnisend.md) |
+| launchdarkly | Feature Flags | ✓ | - | [✓](clis/launchdarkly.js) | ✓ | [launchdarkly.md](integrations/launchdarkly.md) |
+| statsig | Experimentation | ✓ | - | [✓](clis/statsig.js) | ✓ | [statsig.md](integrations/statsig.md) |
+| impact | Affiliate | ✓ | - | [✓](clis/impact.js) | - | [impact.md](integrations/impact.md) |
+| callrail | Call Tracking | ✓ | - | [✓](clis/callrail.js) | - | [callrail.md](integrations/callrail.md) |
+| phantombuster | Lead Automation | ✓ | - | [✓](clis/phantombuster.js) | - | [phantombuster.md](integrations/phantombuster.md) |
+| warmbox | Email Warmup | ✓ | - | [✓](clis/warmbox.js) | - | [warmbox.md](integrations/warmbox.md) |
+| common-room | Community | ✓ | - | [✓](clis/common-room.js) | - | [common-room.md](integrations/common-room.md) |
+| posthog | Analytics | ✓ | - | [✓](clis/posthog.js) | ✓ | [posthog.md](integrations/posthog.md) |
 
 ---
 
@@ -121,12 +137,13 @@ Track user behavior, measure conversions, and analyze marketing performance.
 | **ga4** | Web analytics, Google ecosystem | ✓ |
 | **mixpanel** | Product analytics, event tracking | - |
 | **amplitude** | Product analytics, cohort analysis | - |
-| **posthog** | Open-source analytics, session replay | - |
+| **posthog** | Open-source analytics, session replay, feature flags | - |
 | **segment** | Customer data platform, routing | - |
 | **adobe-analytics** | Enterprise analytics | - |
 | **plausible** | Privacy-focused analytics | - |
+| **triple-whale** | DTC/Shopify attribution, ROAS by channel | - |
 
-**Agent recommendation**: Start with GA4 if using Google ecosystem. Use Mixpanel or Amplitude for deeper product analytics. Plausible for privacy-focused sites.
+**Agent recommendation**: Start with GA4 if using Google ecosystem. Use Mixpanel or Amplitude for deeper product analytics. PostHog for open-source + feature flags in one. Triple Whale for DTC ecommerce attribution. Plausible for privacy-focused sites.
 
 ### SEO
 
@@ -177,8 +194,9 @@ Tools for referral programs, affiliate tracking, and partner management.
 | **mention-me** | Enterprise referral programs | ✓ |
 | **dub-co** | Link tracking, attribution | - |
 | **partnerstack** | Enterprise partner programs | ✓ |
+| **impact** | Enterprise affiliate + influencer + partner | ✓ |
 
-**Agent recommendation**: Rewardful or Tolt for Stripe-based SaaS. PartnerStack for enterprise partner programs. Dub.co for link attribution.
+**Agent recommendation**: Rewardful or Tolt for Stripe-based SaaS. PartnerStack for enterprise partner programs. Impact for large affiliate/influencer programs with advanced attribution and fraud prevention. Dub.co for link attribution.
 
 ### Email
 
@@ -197,8 +215,9 @@ Email marketing, transactional email, and automation platforms.
 | **postmark** | Deliverability-focused transactional | - |
 | **brevo** | Email + SMS, popular in EU | - |
 | **activecampaign** | Email automation + CRM | - |
+| **omnisend** | E-commerce email + SMS, Shopify-native | - |
 
-**Agent recommendation**: Resend for transactional (dev-friendly). Sequenzy for lifecycle email, sequences, and agent-driven email marketing. Postmark for deliverability. Customer.io for advanced automation. Kit for creators. Beehiiv for newsletters. Klaviyo for e-commerce email/SMS. ActiveCampaign for email + CRM combo.
+**Agent recommendation**: Resend for transactional (dev-friendly). Sequenzy for lifecycle email, sequences, and agent-driven email marketing. Postmark for deliverability. Customer.io for advanced automation. Kit for creators. Beehiiv for newsletters. Klaviyo for e-commerce email/SMS. Omnisend for Shopify stores wanting pre-built ecom automations. ActiveCampaign for email + CRM combo.
 
 ### SMS / Messaging
 
@@ -237,8 +256,10 @@ Workflow automation and integration platforms.
 | Tool | Best For | MCP Available |
 |------|----------|:-------------:|
 | **zapier** | No-code integrations + SDK for 8,000+ apps | ✓ |
+| **n8n** | Self-hosted, code-friendly, no per-task billing | - |
+| **make** | Visual automation, 1,000+ app connectors | - |
 
-**Agent recommendation**: Zapier SDK for agents that need to interact with any app directly. Zaps for always-on automations.
+**Agent recommendation**: Zapier SDK for agents that need to interact with any app directly. n8n for self-hosted environments or high-volume automation where per-task billing hurts. Make for teams who prefer visual scenario building.
 
 ### CRO & A/B Testing
 
@@ -248,8 +269,10 @@ Conversion rate optimization, heatmaps, and experimentation.
 |------|----------|-------|
 | **hotjar** | Heatmaps, recordings, surveys | Visual behavior data |
 | **optimizely** | A/B testing, feature flags | Enterprise experimentation |
+| **vwo** | A/B testing, split URL testing | Strong visual editor |
+| **fullstory** | Session replay, behavioral analytics | DX intelligence platform |
 
-**Agent recommendation**: Hotjar for understanding user behavior. Optimizely for running experiments.
+**Agent recommendation**: Hotjar for understanding user behavior visually. Optimizely for enterprise experimentation with feature flags. VWO for A/B testing with a strong visual editor. FullStory for deep behavioral analytics and session replay.
 
 ### Scheduling
 
@@ -380,15 +403,6 @@ Webinar and virtual event platforms.
 
 **Agent recommendation**: Demio for marketing-focused webinars. Livestorm for full event engagement.
 
-### Sales Engagement
-
-Sales engagement and outreach automation platforms.
-
-| Tool | Best For | Notes |
-|------|----------|-------|
-| **outreach** | Enterprise sales engagement | Sequences, tasks, analytics |
-
-**Agent recommendation**: Outreach for enterprise sales teams managing multi-touch sequences at scale.
 
 ### Product Analytics
 
@@ -481,8 +495,82 @@ Cold email outreach and email finding tools for link building and sales prospect
 | **snov** | Email finding, drip campaigns | Built-in sequences |
 | **lemlist** | Cold email campaigns | Personalization features |
 | **instantly** | Cold email at scale | Email warmup built-in |
+| **smartlead** | Cold email, multi-inbox, unlimited warmup | API-first, high deliverability |
 
-**Agent recommendation**: Hunter for finding emails. Lemlist or Instantly for sending cold email campaigns. Snov for combined finding + outreach.
+**Agent recommendation**: Hunter for finding emails. Lemlist or Instantly for sending cold email campaigns. Smartlead for high-volume cold email with unlimited inbox warmup. Snov for combined finding + outreach.
+
+### Email Warmup
+
+Email warmup services to protect sender reputation before cold outreach.
+
+| Tool | Best For | Notes |
+|------|----------|-------|
+| **warmbox** | Email deliverability warmup | Works with any SMTP inbox |
+
+**Agent recommendation**: Warmbox before starting any cold email campaign — warm inboxes for 2–4 weeks to reach 90%+ inbox rate. Pairs with Smartlead, Instantly, or Lemlist for outreach.
+
+### Sales Engagement
+
+Multichannel sales outreach automation.
+
+| Tool | Best For | Notes |
+|------|----------|-------|
+| **outreach** | Enterprise sales engagement | Sequences, tasks, analytics |
+| **reply** | Multichannel sequences (email + LinkedIn + calls) | Smaller teams, API-friendly |
+
+**Agent recommendation**: Outreach for enterprise sales teams. Reply.io for SMB/mid-market multichannel outreach with a straightforward API.
+
+### Feature Flags & Experimentation
+
+Feature management, A/B testing at the code level, and progressive rollouts.
+
+| Tool | Best For | Notes |
+|------|----------|-------|
+| **launchdarkly** | Enterprise feature flags, targeting rules | Most mature platform |
+| **statsig** | Experimentation + feature gates, free tier | Pulse results for stats |
+| **optimizely** | A/B testing + feature flags, enterprise | Strong visual editor |
+
+**Agent recommendation**: LaunchDarkly for enterprise feature flag infrastructure. Statsig for teams wanting experimentation + feature flags in one, with a generous free tier. Optimizely for front-end A/B testing.
+
+### Call Tracking
+
+Call tracking, attribution, and conversation intelligence.
+
+| Tool | Best For | Notes |
+|------|----------|-------|
+| **callrail** | Call tracking, form tracking, attribution | Most popular for SMB/agency |
+
+**Agent recommendation**: CallRail for attributing inbound calls to marketing campaigns. Essential for any business running paid ads that drive phone leads.
+
+### Lead Automation
+
+Programmatic lead generation and social scraping.
+
+| Tool | Best For | Notes |
+|------|----------|-------|
+| **phantombuster** | LinkedIn/GitHub/Twitter scraping, lead lists | 100+ phantom automations |
+
+**Agent recommendation**: PhantomBuster for automating LinkedIn profile visits, connection requests, and lead list extraction. Pair with Apollo or Hunter for email enrichment.
+
+### Community-Led Growth
+
+Community intelligence and product-led growth platforms.
+
+| Tool | Best For | Notes |
+|------|----------|-------|
+| **common-room** | Multi-channel community signals, member scoring | GitHub + Slack + Discord + LinkedIn |
+
+**Agent recommendation**: Common Room for aggregating developer community signals — who's engaging, what they're saying, and which accounts to prioritize for outbound.
+
+### DTC & Ecommerce Analytics
+
+Attribution and analytics for direct-to-consumer and Shopify businesses.
+
+| Tool | Best For | Notes |
+|------|----------|-------|
+| **triple-whale** | Multi-touch attribution, ROAS by channel | Shopify-native |
+
+**Agent recommendation**: Triple Whale for DTC brands on Shopify needing accurate ROAS across Meta, Google, TikTok, and email. Replaces the attribution blind spots left by iOS 14+.
 
 ### Data Aggregation
 
